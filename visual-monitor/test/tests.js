@@ -41,7 +41,7 @@ var caps = selectedCaps ? capsConfig[selectedCaps] : undefined;
 var providerPrefix = process.env.PROVIDER_PREFIX ? process.env.PROVIDER_PREFIX + '-' : '';
 var testName = selectedCaps ? providerPrefix + selectedCaps : providerPrefix + 'default';
 
-var baseUrl = process.env.BASE_URL ? process.env.BASE_URL : 'https://www.nsa.gov/';
+var baseUrl = process.env.BASE_URL ? process.env.BASE_URL : 'https://www.nsa.gov';
 
 var resultsCallback = process.env.DEBUG ? console.log : shoovWebdrivercss.processResults;
 
@@ -65,8 +65,7 @@ describe('Visual monitor testing', function() {
         name: '1',
         exclude: [],
         remove: [],
-        hide: [],
-        screenWidth: selectedCaps == 'chrome' ? [640, 960, 1200] : undefined,
+        hide: []
       }, resultsCallback)
       .call(done);
   });
