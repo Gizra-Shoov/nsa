@@ -61,9 +61,14 @@ describe('Visual monitor testing', function() {
   it('should show the home page',function(done) {
     client
       .url(baseUrl)
+      // .execute(function() {
+      //   jQuery('.top-banner-nonmobile img:first').attr('src', 'https://cloud.githubusercontent.com/assets/125707/12422001/75cbdcb4-becd-11e5-95cc-41fc5a380318.jpg')
+      // })
       .webdrivercss(testName + '.homepage', {
         name: '1',
-        exclude: [],
+        exclude: [
+          '.flashObject'
+        ],
         remove: [],
         hide: []
       }, resultsCallback)
